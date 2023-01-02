@@ -1,0 +1,169 @@
+/* VOLUME  */
+
+#custom-video-volume-wrapper {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+
+	display: none;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+#custom-video-volume-wrapper.active {
+	display: flex;
+}
+
+#custom-video-volume-wrapper svg {
+	width: 1rem;
+	height: 1rem;
+
+	margin-right: .25rem;
+
+	fill: crimson;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: silver;
+    width: 8rem;
+    height: .5rem;
+    border-radius: .25rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: crimson;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+/* TIMEBAR  */
+
+#timebar {
+	width: 100%;
+	max-width: 0%;
+	height: .5rem;
+
+	background-color: crimson;
+
+	animation-duration: 30s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+#timebar.animate {
+	animation-name: grow;
+}
+
+#timebar.pause {
+	animation-play-state: paused;
+}
+
+/* VIDEO  */
+
+video {
+	width: 100%;
+	
+	cursor: pointer;
+}
+
+#video-wrapper {
+	position: relative;
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+
+	width: 100%;
+}
+
+/* POPUP */
+
+#custom-video-popup {
+	position: absolute;
+	top: calc(50% - 5rem);
+	left: calc(50% - 7rem);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	width: 14rem;
+	height: 10rem;
+
+	border-radius: 2rem;
+
+	color: #000;
+	background-color: crimson;
+
+	opacity: .75;
+	cursor: pointer;
+
+	transition: transform .3s ease;
+}
+
+#custom-video-popup.deactivated {
+	display: none;
+}
+
+#custom-video-popup:hover {
+	transform: scale(1.05);
+}
+
+#custom-video-popup span {
+	color: #000;
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+#custom-video-popup svg {
+	width: 3rem;
+
+	margin: 1rem 0;
+}
+
+@keyframes grow {
+	0% {
+		max-width: 0%;
+	}
+
+	30% {
+		max-width: 50%;
+	}
+
+	70% {
+		max-width: 75%;
+	}
+
+	100% {
+		max-width: 100%;
+	}
+}
+
+@keyframes grow2 {
+	0% {
+		max-width: 0%;
+	}
+
+	30% {
+		max-width: 50%;
+	}
+
+	70% {
+		max-width: 75%;
+	}
+
+	100% {
+		max-width: 100%;
+	}
+}
